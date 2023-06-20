@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <script defer type="module" src="/index.js"></script>
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="style.css">
   <title>Manage landing page</title>
@@ -16,22 +16,29 @@
 <body>
   <header class="primary-header">
     <div class="container">
-      <a href="#"><img src="./images/logo.svg" alt="logo"/></a>
-      <nav class="primary-nav">
-        <ul role="list" class="nav-list">
-          <li><a href="#">Pricing</a></li>
-          <li><a href="#">Product</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Careers</a></li>
-          <li><a href="#">Community</a></li>
-        </ul>
-      </nav>
-      <button class="button">Get Started</button>
+      <div class="nav-wrapper">
+        <a href="#"><img src="./images/logo.svg" alt="logo"/></a>
+        <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
+          <img class="icon-close" src="images/icon-close.svg" alt="" aria-hidden="true">
+          <img class="icon-hamburger" src="images/icon-hamburger.svg" alt="" aria-hidden="true">
+          <span class="visually-hidden">Menu</span>
+        </button>
+        <nav class="primary-nav" id="primary-navigation">
+          <ul role="list" class="nav-list">
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">Product</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Community</a></li>
+          </ul>
+        </nav>
+        <button class="button | display-none display-inline-flex">Get Started</button>
+      </div>
     </div>
   </header>
 
   <main>
-    <section>
+    <section class="padding-block-900">
       <div class="container">
         <div class="even-columns">
           <div>
@@ -49,7 +56,7 @@
       </div>
     </section>
 
-    <section>
+    <section class="padding-block-900">
       <div class="container">
         <div class="even-columns">
           <div>
@@ -84,12 +91,12 @@
       </div>
     </section>
 
-    <section class="carousel">
-      <h2 class="fs-secondary-heading">What they've said</h2>
+    <section class="padding-block-900 carousel">
+      <h2 class="fs-secondary-heading fw-bold">What they've said</h2>
       <button class="button">Get Started</button>
     </section>
 
-    <section class="bg-accent-400 text-neutral-100">
+    <section class="padding-block-700 bg-accent-400 text-neutral-100">
       <div class="container">
         <div class="even-columns">
           <div>
@@ -103,7 +110,7 @@
     </section>
   </main>
 
-  <footer class="bg-neutral-900 text-neutral-100">
+  <footer class="padding-block-700 bg-neutral-900 text-neutral-100">
     <div class="even-columns">
       <div >
         <a href="#"><img src="./images/logo.svg" alt="logo"/></a>
