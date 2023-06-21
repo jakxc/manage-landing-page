@@ -92,6 +92,15 @@ body {
   color: var(--clr-primary-400);
 }
 
+p:not([class]) {
+  opacity: 0.7;
+  max-width: 32ch;
+}
+
+p[data-width='stretch'] {
+  max-width: 45ch;
+}
+
 /* A elements that don't have a class get default styles */
 a:not([class]) {
   text-decoration-skip-ink: auto;
@@ -118,27 +127,6 @@ svg {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
-  }
-}
-
-
-.container {
-  --max-width: 1110px;
-  --horizontal-padding: 1rem;
-
-  width: min(var(--max-width), 100% - (var(--horizontal-padding) * 2));
-  margin-inline: auto;
-}
-
-.even-columns {
-  display: grid;
-  gap: 1rem;
-}
-
-@media screen and (min-width: 800px) {
-  .even-columns {
-    grid-auto-flow: column;
-    grid-auto-columns: 1fr;
   }
 }
 
@@ -254,6 +242,30 @@ svg {
   }  
 }
 
+.cta {
+  position: relative;
+  isolation: isolate;
+  text-align: center;
+}
+
+@media screen and (min-width: 800px) {
+  .cta {
+    text-align: left;
+  }
+}
+
+.cta::before { 
+  content: "";
+  position: absolute;
+  inset: 0; /* Covers entire .cta section */
+  background-image: url('images/bg-tablet-pattern.svg'),
+                    url('images/bg-tablet-pattern.svg')  ;
+  background-repeat: no-repeat;
+  background-position: -15rem -5rem, 80rem -42rem;
+  z-index: -1;
+  opacity: 0.1;
+}
+
 /* Utility classes */
 
 .visually-hidden {
@@ -268,6 +280,47 @@ svg {
   white-space: nowrap !important;
   border: 0 !important;
 }
+
+.container {
+  --max-width: 1110px;
+  --horizontal-padding: 1rem;
+
+  width: min(var(--max-width), 100% - (var(--horizontal-padding) * 2));
+  margin-inline: auto;
+}
+
+.justify-self-end {
+  justify-self: end;
+}
+
+
+@media screen and (min-width: 800px) {
+  .justify-self-end-md {
+    justify-self: end;
+  }
+}
+
+.even-columns {
+  display: grid;
+  gap: 1rem;
+}
+
+@media screen and (min-width: 800px) {
+  .even-columns {
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+  }
+}
+
+.vertical-align-center {
+  align-items: center;
+}
+
+.flow * + * {
+  /* can use flow-space var to define different margin values */
+  margin-top: var(--flow-spacer, 3em);
+}
+
 
 .text-primary-400 {
   color: var(--clr-primary-400);
