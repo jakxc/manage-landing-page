@@ -370,6 +370,20 @@ input:where([type="text"], [type="email"], ) {
   }
 }
 
+.attribution {
+  display: flex;
+  justify-content: center;
+  color: #ffffff;
+}
+
+.attribution a {
+  color: rgba(99, 161, 255, 0.75);
+}
+
+.attribution a:hover {
+  color: rgba(99, 161, 255, 1);
+}
+
 /* social list */
 
 .social-list {

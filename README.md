@@ -46,6 +46,6 @@ Users should be able to:
 
 ## Author
 
-- Website - [Jakxc](https://www.your-site.com)
+- Website - [Jakxc](https://jakxc-portfolio.netlify.app/)
 - Frontend Mentor - [@jakxc](https://www.frontendmentor.io/profile/yourusername)
 - Github - [@jakxc](https://github.com/jakxc)
